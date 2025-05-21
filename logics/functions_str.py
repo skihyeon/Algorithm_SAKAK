@@ -57,10 +57,13 @@ def main(n: int) -> str:
     """
     if not (3 < n < 100):
         raise ValueError("입력 n은 3보다 크고 100보다 작아야 합니다.")
-        
+    
+    import time
+    start_time = time.time()
     ln_term = get_nth_term(n)
     length = len(ln_term)
-    
+    print(f"get_nth_term 함수 실행 시간: {time.time() - start_time}초")
+    # print(ln_term)
     if length < 2:
         raise ValueError(f"첫 항입니다.")
     
@@ -70,7 +73,6 @@ def main(n: int) -> str:
     ## 홀수 길이 항은 dont care
     
     mid_start_index = (length // 2) - 1
-    
     middle_two_digits = ln_term[mid_start_index : mid_start_index + 2]
     return middle_two_digits
 
