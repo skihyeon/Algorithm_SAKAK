@@ -1,0 +1,1 @@
+pytest -v test_case/test_pytest_str.py
